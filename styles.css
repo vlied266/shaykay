@@ -8,19 +8,19 @@
 }
 
 :root {
-  --bg-light: #F2F0EA;
+  --bg-light: #FFFFFF;
   --bg-dark: #111111;
   --text-dark: #111111;
-  --text-light: #F2F0EA;
-  --text-secondary: #696760;
+  --text-light: #FFFFFF;
+  --text-secondary: #666666;
   --line-color: rgba(17, 17, 17, 0.15);
-  --accent: #B5A895;
+  --accent: #111111;
 
   --spacing-xs: 16px;
   --spacing-sm: 24px;
   --spacing-md: 32px;
-  --spacing-lg: 50px;
-  --spacing-xl: 70px;
+  --spacing-lg: 48px;
+  --spacing-xl: 100px;
 
   --transition-fast: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-base: 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -188,30 +188,29 @@ a {
    HERO SECTION
    ============================================ */
 .hero {
-  height: 100vh;
-  padding-top: 70px;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
   background-color: var(--bg-light);
+  padding-top: 70px;
+  padding-bottom: clamp(80px, 12vh, 130px);
+  position: relative;
+  overflow: visible;
+  min-height: auto;
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
-  align-items: center;
+  display: flex;
+  flex-direction: column;
   width: 100%;
   max-width: 100%;
   padding: 0 var(--spacing-lg);
+  margin: 0 auto;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 2;
+  margin-bottom: clamp(50px, 8vh, 90px);
 }
 
 .hero-label {
@@ -219,16 +218,19 @@ a {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(20px, 3vh, 40px);
   opacity: 0;
   animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  font-weight: 500;
 }
 
 .hero-heading {
-  font-size: clamp(3.5rem, 11vw, 10rem);
-  margin-bottom: var(--spacing-lg);
-  line-height: 0.95;
+  font-size: clamp(5.5rem, 9vw, 10rem);
+  margin-bottom: clamp(24px, 4vh, 36px);
+  line-height: 0.88;
   font-weight: 400;
+  letter-spacing: -0.04em;
+  color: var(--text-dark);
 }
 
 .hero-line {
@@ -273,10 +275,16 @@ a {
 
 .hero-media {
   position: relative;
-  height: 100%;
+  width: calc(100vw - 64px);
+  max-width: 95vw;
+  height: clamp(400px, 72vh, 800px);
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   z-index: 1;
+  border-radius: clamp(24px, 4vw, 32px);
+  overflow: hidden;
 }
 
 .hero-media .media-placeholder {
@@ -284,6 +292,7 @@ a {
   height: 100%;
   animation: scaleIn 1.2s ease-out 0.5s backwards;
   transform-origin: center;
+  border-radius: clamp(24px, 4vw, 32px);
 }
 
 @keyframes fadeInUp {
@@ -318,31 +327,32 @@ a {
 }
 
 @media (max-width: 1024px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    min-height: auto;
-  }
-
   .hero-media {
-    height: 400px;
+    width: calc(100vw - 48px);
+    height: clamp(350px, 65vh, 650px);
   }
 }
 
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    min-height: 100vh;
-    padding: 100px var(--spacing-md) var(--spacing-lg);
+    padding-top: 70px;
+    padding-bottom: var(--spacing-lg);
   }
 
   .hero-container {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
+  }
+
+  .hero-heading {
+    font-size: clamp(3rem, 9vw, 5.5rem);
   }
 
   .hero-media {
-    height: 500px;
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    height: clamp(300px, 60vh, 500px);
+    border-radius: clamp(16px, 3vw, 20px);
+    margin-bottom: clamp(40px, 6vh, 80px);
   }
 
   .hero-description {
@@ -402,25 +412,28 @@ a {
    FEATURED WORK SECTION
    ============================================ */
 .featured-work {
-  padding: clamp(80px, 12vh, 150px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
 }
 
 .featured-media {
-  width: 100%;
-  height: clamp(400px, 80vh, 800px);
-  margin: var(--spacing-xl) 0;
-  border-radius: 16px;
+  width: calc(100vw - 96px);
+  max-width: 95vw;
+  height: clamp(400px, 75vh, 750px);
+  margin: clamp(60px, 10vh, 100px) auto;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
 }
 
 .featured-media .media-placeholder {
   width: 100%;
   height: 100%;
+  border-radius: clamp(24px, 4vw, 32px);
 }
 
 .featured-info {
   max-width: 600px;
+  margin: clamp(40px, 6vh, 80px) auto 0;
 }
 
 .featured-info h3 {
@@ -448,7 +461,7 @@ a {
    CAPABILITIES SECTION
    ============================================ */
 .capabilities {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
   overflow: hidden;
 }
@@ -516,7 +529,7 @@ a {
    APPROACH SECTION
    ============================================ */
 .approach {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
 }
 
@@ -567,17 +580,17 @@ a {
    PROCESS SECTION
    ============================================ */
 .process {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
 }
 
 .process-stage {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(3rem, 8vw, 6rem);
+  gap: clamp(60px, 10vw, 100px);
   align-items: center;
-  margin-bottom: clamp(80px, 12vh, 150px);
-  min-height: 70vh;
+  margin-bottom: clamp(160px, 18vh, 240px);
+  min-height: 60vh;
 }
 
 .process-stage[data-layout="text-right"] {
@@ -673,22 +686,24 @@ a {
    TOOLKIT SECTION
    ============================================ */
 .toolkit {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   overflow: hidden;
+  border-top: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
 }
 
 .toolkit .section-heading {
-  color: var(--text-light);
+  color: var(--text-dark);
 }
 
 .toolkit .section-description {
-  color: rgba(242, 240, 234, 0.8);
+  color: var(--text-secondary);
 }
 
 .toolkit-marquee {
-  margin-top: var(--spacing-xl);
+  margin-top: clamp(60px, 10vh, 100px);
   display: flex;
   flex-direction: column;
   gap: var(--spacing-lg);
@@ -703,24 +718,24 @@ a {
 
 .toolkit-track span {
   display: inline-block;
-  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
   font-weight: 400;
   letter-spacing: -0.02em;
-  color: rgba(242, 240, 234, 0.3);
+  color: rgba(17, 17, 17, 0.2);
   padding: var(--spacing-md) 0;
   flex-shrink: 0;
 }
 
 .toolkit-track-1 span:nth-child(odd) {
-  color: rgba(242, 240, 234, 0.8);
+  color: rgba(17, 17, 17, 0.5);
 }
 
 .toolkit-track-2 span:nth-child(even) {
-  color: rgba(242, 240, 234, 0.8);
+  color: rgba(17, 17, 17, 0.5);
 }
 
 .toolkit-track-3 span:nth-child(odd) {
-  color: rgba(242, 240, 234, 0.8);
+  color: rgba(17, 17, 17, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -737,12 +752,12 @@ a {
    SELECTED WORK SECTION
    ============================================ */
 .selected-work {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
 }
 
 .project-block {
-  margin-bottom: clamp(80px, 12vh, 150px);
+  margin-bottom: clamp(160px, 18vh, 240px);
 }
 
 .project-label {
@@ -757,14 +772,14 @@ a {
 .project-01 .project-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
-  align-items: center;
+  gap: clamp(60px, 10vw, 100px);
+  align-items: flex-start;
 }
 
 .project-01 .project-media {
   width: 100%;
   aspect-ratio: 3/4;
-  border-radius: 16px;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
   grid-column: 1;
   grid-row: 1;
@@ -773,20 +788,21 @@ a {
 .project-01 .project-info {
   grid-column: 2;
   grid-row: 1;
-  padding-left: var(--spacing-lg);
+  padding-left: clamp(40px, 6vw, 80px);
+  padding-top: clamp(20px, 3vh, 40px);
 }
 
 /* Project 02 - Dual Offset */
 .project-02 .project-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: var(--spacing-lg);
+  grid-template-columns: 2.5fr 1.5fr;
+  gap: clamp(40px, 8vw, 80px);
   align-items: start;
 }
 
 .project-02 .large-landscape {
   aspect-ratio: 16/9;
-  border-radius: 16px;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
   grid-column: 1;
   grid-row: 1 / 3;
@@ -794,85 +810,90 @@ a {
 
 .project-02 .small-portrait {
   aspect-ratio: 3/4;
-  border-radius: 16px;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
   grid-column: 2;
   grid-row: 1;
-  transform: translateY(60px);
+  transform: translateY(80px);
 }
 
 .project-02 .project-info {
   grid-column: 2;
   grid-row: 2;
-  padding-top: var(--spacing-lg);
+  padding-top: clamp(60px, 8vh, 120px);
 }
 
 /* Project 03 - Full Width */
 .project-03 .project-layout {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: clamp(60px, 10vh, 100px);
 }
 
 .project-03 .full-width {
-  width: 100%;
+  width: calc(100vw - 96px);
+  max-width: 95vw;
   aspect-ratio: 16/9;
-  border-radius: 16px;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
+  margin: 0 auto;
 }
 
 /* Project 04 - Cinematic */
 .project-04 .project-layout {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: clamp(60px, 10vh, 100px);
 }
 
 .project-04 .cinematic {
-  width: 100%;
+  width: calc(100vw - 96px);
+  max-width: 95vw;
   aspect-ratio: 2.39/1;
-  border-radius: 16px;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
+  margin: 0 auto;
 }
 
 /* Project 05 - Asymmetric */
 .project-05 .project-layout {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-xl);
-  align-items: center;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(60px, 10vw, 100px);
+  align-items: flex-start;
 }
 
 .project-05 .asymmetric {
   width: 100%;
   aspect-ratio: 4/5;
-  border-radius: 16px;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
   grid-column: 1;
 }
 
 .project-05 .project-info {
   grid-column: 2;
-  padding-left: var(--spacing-lg);
+  padding-left: clamp(40px, 6vw, 80px);
+  padding-top: clamp(20px, 3vh, 40px);
 }
 
 /* Project 06 - Triptych */
 .project-06 .project-layout {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-lg);
+  gap: clamp(60px, 10vh, 100px);
 }
 
 .project-06 .project-layout.triptych {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg);
+  gap: clamp(40px, 6vw, 60px);
   grid-template-rows: auto auto;
 }
 
 .project-06 .vertical {
   aspect-ratio: 9/16;
-  border-radius: 16px;
+  border-radius: clamp(24px, 4vw, 32px);
   overflow: hidden;
   grid-row: 1;
 }
@@ -880,6 +901,7 @@ a {
 .project-06 .project-info {
   grid-column: 1 / -1;
   grid-row: 2;
+  padding-top: clamp(40px, 6vh, 80px);
 }
 
 /* Project Info */
@@ -899,7 +921,7 @@ a {
   .project-01 .project-layout,
   .project-05 .project-layout {
     grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+    gap: clamp(40px, 6vh, 80px);
   }
 
   .project-01 .project-media {
@@ -913,6 +935,7 @@ a {
 
   .project-02 .project-layout {
     grid-template-columns: 1fr;
+    gap: clamp(40px, 6vh, 80px);
   }
 
   .project-02 .large-landscape {
@@ -942,15 +965,17 @@ a {
 
 @media (max-width: 768px) {
   .selected-work {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: clamp(80px, 12vh, 140px) var(--spacing-md);
   }
 
   .project-block {
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: clamp(100px, 14vh, 160px);
   }
 
-  .project-03 .cinematic,
+  .project-03 .full-width,
   .project-04 .cinematic {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
     aspect-ratio: 9/16;
   }
 
@@ -961,19 +986,26 @@ a {
   .project-06 .vertical {
     aspect-ratio: 9/16;
   }
+
+  .featured-media {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+  }
 }
 
 /* ============================================
    CTA DARK SECTION
    ============================================ */
 .cta-dark {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 80vh;
+  min-height: 70vh;
+  border-top: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
 }
 
 .cta-content {
@@ -982,8 +1014,16 @@ a {
 }
 
 .cta-dark .section-heading {
-  color: var(--text-light);
+  color: var(--text-dark);
   margin-bottom: var(--spacing-lg);
+}
+
+.cta-dark .section-label {
+  color: var(--text-secondary);
+}
+
+.cta-dark .section-description {
+  color: var(--text-secondary);
 }
 
 .cta-link {
@@ -1010,7 +1050,7 @@ a {
    ABOUT SECTION
    ============================================ */
 .about {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
 }
 
@@ -1102,23 +1142,23 @@ a {
    TESTIMONIALS SECTION
    ============================================ */
 .testimonials {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
 }
 
 .testimonials-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
+  gap: clamp(40px, 8vw, 80px);
 }
 
 .testimonial-block {
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-lg);
+  padding: clamp(32px, 5vw, 48px);
   border: 1px solid var(--line-color);
-  border-radius: 12px;
-  background-color: rgba(242, 240, 234, 0.5);
+  border-radius: 0;
+  background-color: transparent;
 }
 
 .testimonial-quote {
@@ -1170,9 +1210,9 @@ a {
    FINAL CTA SECTION
    ============================================ */
 .final-cta {
-  padding: clamp(100px, 14vh, 160px) var(--spacing-lg);
+  padding: clamp(140px, 16vh, 220px) var(--spacing-lg);
   background-color: var(--bg-light);
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1219,7 +1259,7 @@ a {
    FOOTER
    ============================================ */
 .footer {
-  padding: var(--spacing-xl) var(--spacing-lg);
+  padding: clamp(80px, 12vh, 140px) var(--spacing-lg);
   border-top: 1px solid var(--line-color);
   background-color: var(--bg-light);
 }
