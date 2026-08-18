@@ -8,568 +8,677 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-logo">SHAY KAY™</div>
-      <div class="navbar-links">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#capabilities" class="nav-link">Capabilities</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#contact" class="nav-link">Contact ↗</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <div class="hero-container">
-      <div class="hero-content">
-        <div class="hero-label">CREATIVE DIRECTOR · AI VISUAL CREATOR</div>
-        <h1 class="hero-heading">
-          <span class="hero-line">Ideas,</span>
-          <span class="hero-line">made visible.</span>
-        </h1>
-        <p class="hero-description">AI films, visual campaigns and creative content built for brands that want to look different.</p>
-        <a href="#featured" class="hero-cta">Explore the work ↓</a>
-      </div>
-      <div class="hero-media">
+<!-- ====================================================================
+     SECTION 01: NAVIGATION + HERO
+     ==================================================================== -->
+
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-logo">SHAY KAY™</div>
+    <div class="navbar-links">
+      <a href="#work" class="nav-link">WORK</a>
+      <a href="#capabilities" class="nav-link">CAPABILITIES</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="#contact" class="nav-link">CONTACT ↗</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1 class="hero-heading">Ideas, made visible.</h1>
+    <p class="hero-description">AI films, visual campaigns and creative content built from concept to final frame.</p>
+    <a href="#featured" class="hero-cta">Explore my work ↗</a>
+  </div>
+
+  <div class="hero-media">
+    <video autoplay muted loop playsinline>
+      <source src="/public/media/hero.mp4" type="video/mp4">
+    </video>
+    <div class="media-placeholder">
+      <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/hero.mp4</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 02: TRUST / PROOF LINE
+     ==================================================================== -->
+
+<section class="proof-line">
+  <p class="proof-statement">Creative work across AI film, healthcare, beauty and branded content.</p>
+  <div class="proof-items">
+    <div class="proof-item">AI-POWERED PRODUCTION</div>
+    <div class="proof-item">CREATIVE DIRECTION</div>
+    <div class="proof-item">FILM · DESIGN · MOTION</div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 03: FEATURED PROJECT
+     ==================================================================== -->
+
+<section class="featured-project">
+  <div class="featured-content">
+    <div class="featured-label">FEATURED PROJECT</div>
+    <h2 class="featured-heading">Ovena Health</h2>
+    <p class="featured-secondary">Healthcare Content System</p>
+    <p class="featured-description">A multi-format visual content system combining AI production, product storytelling, educational content and social-first creative for a healthcare brand.</p>
+    <a href="#" class="featured-cta">View project ↗</a>
+  </div>
+
+  <div class="featured-visual">
+    <video autoplay muted loop playsinline>
+      <source src="/public/media/projects/ovena-featured.mp4" type="video/mp4">
+    </video>
+    <div class="media-placeholder">
+      <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/ovena-featured.mp4</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 04: CAPABILITIES INTRO + VISUAL GALLERY
+     ==================================================================== -->
+
+<section class="capabilities-intro" id="capabilities">
+  <div class="intro-content">
+    <h2 class="intro-heading">Creative work built<br>around the idea.</h2>
+    <p class="intro-description">From AI films and product stories to beauty, healthcare, UGC and campaign creative — the format changes depending on what the story needs.</p>
+    <a href="#" class="intro-cta">Explore capabilities ↗</a>
+  </div>
+
+  <div class="capabilities-gallery">
+    <div class="capability-tile">
+      <div class="capability-visual">
         <div class="media-placeholder">
-          <video autoplay muted loop playsinline>
-            <source src="/public/media/hero.mp4" type="video/mp4">
-          </video>
-          <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/hero.mp4</div>
+          <div class="placeholder-text">Creative<br>Visual Design</div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Proof Strip -->
-  <section class="proof-strip">
-    <div class="proof-item">
-      <div class="proof-label">AI-POWERED PRODUCTION</div>
-    </div>
-    <div class="proof-divider"></div>
-    <div class="proof-item">
-      <div class="proof-label">CREATIVE STRATEGY</div>
-    </div>
-    <div class="proof-divider"></div>
-    <div class="proof-item">
-      <div class="proof-label">FILM · DESIGN · MOTION</div>
-    </div>
-  </section>
-
-  <!-- Featured Work -->
-  <section class="featured-work" id="featured">
-    <div class="section-label">FEATURED WORK</div>
-    <h2 class="section-heading">
-      <span>Building visual worlds</span>
-      <span>for brands.</span>
-    </h2>
-    <p class="section-description">A selection of AI-driven films, product stories and visual campaigns created from concept through final execution.</p>
-
-    <div class="featured-media">
-      <div class="media-placeholder large">
-        <video poster="/public/media/projects/featured-poster.jpg">
-          <source src="/public/media/projects/ovena-featured.mp4" type="video/mp4">
-        </video>
-        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/ovena-featured.mp4</div>
-      </div>
+      <p class="capability-label">Creative Visual Design</p>
     </div>
 
-    <div class="featured-info">
-      <div class="featured-project">
-        <h3>Ovena Health</h3>
-        <p>Creative Direction · AI Video · Product Storytelling</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Capabilities Gallery -->
-  <section class="capabilities" id="capabilities">
-    <div class="section-label">WHAT I CREATE</div>
-    <h2 class="section-heading">
-      <span>Capabilities</span>
-      <span>across disciplines.</span>
-    </h2>
-
-    <div class="capabilities-track">
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">01<br>AI Films</div>
-          </div>
-        </div>
-        <div class="capability-label">01 / AI Films</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">02<br>Beauty &<br>Skincare</div>
-          </div>
-        </div>
-        <div class="capability-label">02 / Beauty & Skincare</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">03<br>Health &<br>Wellness</div>
-          </div>
-        </div>
-        <div class="capability-label">03 / Health & Wellness</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">04<br>AI UGC</div>
-          </div>
-        </div>
-        <div class="capability-label">04 / AI UGC</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">05<br>Product<br>Visuals</div>
-          </div>
-        </div>
-        <div class="capability-label">05 / Product Visuals</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">06<br>Paid<br>Social</div>
-          </div>
-        </div>
-        <div class="capability-label">06 / Paid Social</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">07<br>Creative<br>Direction</div>
-          </div>
-        </div>
-        <div class="capability-label">07 / Creative Direction</div>
-      </div>
-
-      <div class="capability-item">
-        <div class="capability-media">
-          <div class="media-placeholder">
-            <div class="placeholder-text">08<br>Graphic<br>Design</div>
-          </div>
-        </div>
-        <div class="capability-label">08 / Graphic Design</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Approach Section -->
-  <section class="approach">
-    <div class="section-label">THE APPROACH</div>
-    <h2 class="section-heading">
-      <span>More than just</span>
-      <span>AI generation.</span>
-    </h2>
-
-    <div class="approach-grid">
-      <div class="approach-column">
-        <div class="approach-number">01</div>
-        <h3>CONCEPT</h3>
-        <p>Ideas begin with audience, story and objective — not with the AI tool. Every project starts with creative thinking, not generation.</p>
-      </div>
-      <div class="approach-column">
-        <div class="approach-number">02</div>
-        <h3>CRAFT</h3>
-        <p>Visual consistency, pacing, sound, editing and detail make the generated material feel intentional. Technology serves the vision.</p>
-      </div>
-      <div class="approach-column">
-        <div class="approach-number">03</div>
-        <h3>DELIVERY</h3>
-        <p>From the first idea to polished campaign-ready assets. Every piece adapted for platform, audience and performance.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Process Section -->
-  <section class="process">
-    <div class="section-label">THE PROCESS</div>
-    <h2 class="section-heading">
-      <span>From idea</span>
-      <span>to final frame.</span>
-    </h2>
-
-    <!-- Stage 01 -->
-    <div class="process-stage" data-layout="text-left">
-      <div class="process-content">
-        <div class="stage-label">01 / THINK</div>
-        <h3 class="stage-heading">
-          <span>Concept &</span>
-          <span>Creative Strategy</span>
-        </h3>
-        <p class="stage-description">Understanding the audience, product, platform and objective before generating a single frame. This is where creative thinking shapes direction.</p>
-      </div>
-      <div class="process-media">
+    <div class="capability-tile">
+      <div class="capability-visual">
         <div class="media-placeholder">
-          <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/process/concept.mp4</div>
+          <div class="placeholder-text">AI Films</div>
         </div>
       </div>
+      <p class="capability-label">AI Films</p>
     </div>
 
-    <!-- Stage 02 -->
-    <div class="process-stage" data-layout="text-right">
-      <div class="process-media">
+    <div class="capability-tile">
+      <div class="capability-visual">
         <div class="media-placeholder">
-          <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/process/production.mp4</div>
+          <div class="placeholder-text">Beauty &<br>Skincare</div>
         </div>
       </div>
-      <div class="process-content">
-        <div class="stage-label">02 / BUILD</div>
-        <h3 class="stage-heading">
-          <span>AI</span>
-          <span>Production</span>
-        </h3>
-        <p class="stage-description">Building characters, environments, products and cinematic sequences through AI-assisted production workflows. Technology in service of creative vision.</p>
-      </div>
+      <p class="capability-label">Beauty & Skincare</p>
     </div>
 
-    <!-- Stage 03 -->
-    <div class="process-stage" data-layout="text-left">
-      <div class="process-content">
-        <div class="stage-label">03 / SHAPE</div>
-        <h3 class="stage-heading">
-          <span>Edit &</span>
-          <span>Motion</span>
-        </h3>
-        <p class="stage-description">Editing, compositing, typography, sound and motion turn individual shots into one coherent piece. This is where the work comes alive.</p>
-      </div>
-      <div class="process-media">
+    <div class="capability-tile">
+      <div class="capability-visual">
         <div class="media-placeholder">
-          <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/process/editing.mp4</div>
+          <div class="placeholder-text">Healthcare &<br>Wellness</div>
         </div>
       </div>
+      <p class="capability-label">Healthcare & Wellness</p>
     </div>
 
-    <!-- Stage 04 -->
-    <div class="process-stage" data-layout="text-right">
-      <div class="process-media">
+    <div class="capability-tile">
+      <div class="capability-visual">
         <div class="media-placeholder">
-          <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/process/delivery.mp4</div>
+          <div class="placeholder-text">Product<br>Visuals</div>
         </div>
       </div>
-      <div class="process-content">
-        <div class="stage-label">04 / DELIVER</div>
-        <h3 class="stage-heading">
-          <span>Campaign-ready</span>
-          <span>content.</span>
-        </h3>
-        <p class="stage-description">Final creative adapted into platform-specific formats, hooks, cutdowns and variations. Ready to perform from day one.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Toolkit Section -->
-  <section class="toolkit">
-    <div class="section-label">THE TOOLKIT</div>
-    <h2 class="section-heading">
-      <span>One workflow.</span>
-      <span>Many creative tools.</span>
-    </h2>
-
-    <div class="toolkit-marquee">
-      <div class="toolkit-track toolkit-track-1">
-        <span>MIDJOURNEY</span>
-        <span>KLING</span>
-        <span>VEO</span>
-        <span>RUNWAY</span>
-        <span>AFTER EFFECTS</span>
-        <span>PREMIERE PRO</span>
-        <span>MIDJOURNEY</span>
-        <span>KLING</span>
-        <span>VEO</span>
-        <span>RUNWAY</span>
-      </div>
-      <div class="toolkit-track toolkit-track-2">
-        <span>PHOTOSHOP</span>
-        <span>ILLUSTRATOR</span>
-        <span>ELEVENLABS</span>
-        <span>HEYGEN</span>
-        <span>CANVA</span>
-        <span>CAPCUT</span>
-        <span>PHOTOSHOP</span>
-        <span>ILLUSTRATOR</span>
-        <span>ELEVENLABS</span>
-        <span>HEYGEN</span>
-      </div>
-      <div class="toolkit-track toolkit-track-3">
-        <span>STORYBOARDING</span>
-        <span>PROMPT DESIGN</span>
-        <span>COMPOSITING</span>
-        <span>EDITING</span>
-        <span>MOTION</span>
-        <span>CREATIVE STRATEGY</span>
-        <span>STORYBOARDING</span>
-        <span>PROMPT DESIGN</span>
-        <span>COMPOSITING</span>
-        <span>EDITING</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Selected Work -->
-  <section class="selected-work" id="work">
-    <div class="section-label">SELECTED WORK</div>
-    <h2 class="section-heading">
-      <span>A few things</span>
-      <span>I've made.</span>
-    </h2>
-
-    <!-- Project 01 -->
-    <div class="project-block project-01">
-      <div class="project-label">01 / BEAUTY</div>
-      <div class="project-layout">
-        <div class="project-media large-portrait">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/beauty-skincare.mp4</div>
-          </div>
-        </div>
-        <div class="project-info">
-          <h3 class="project-title">Luxury Skincare Commercial</h3>
-          <p class="project-services">AI Film · Creative Direction · Editing</p>
-        </div>
-      </div>
+      <p class="capability-label">Product Visuals</p>
     </div>
 
-    <!-- Project 02 -->
-    <div class="project-block project-02">
-      <div class="project-label">02 / HEALTHCARE</div>
-      <div class="project-layout">
-        <div class="project-media large-landscape">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/health-wellness.mp4</div>
-          </div>
+    <div class="capability-tile">
+      <div class="capability-visual">
+        <div class="media-placeholder">
+          <div class="placeholder-text">AI UGC</div>
         </div>
-        <div class="project-media small-portrait offset">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/health-secondary.jpg</div>
-          </div>
+      </div>
+      <p class="capability-label">AI UGC</p>
+    </div>
+
+    <div class="capability-tile">
+      <div class="capability-visual">
+        <div class="media-placeholder">
+          <div class="placeholder-text">Cinematic<br>Storytelling</div>
         </div>
-        <div class="project-info">
-          <h3 class="project-title">Ovena Health</h3>
-          <p class="project-services">Content System · AI Video · Product Storytelling</p>
+      </div>
+      <p class="capability-label">Cinematic Storytelling</p>
+    </div>
+
+    <div class="capability-tile">
+      <div class="capability-visual">
+        <div class="media-placeholder">
+          <div class="placeholder-text">Paid Social<br>Creative</div>
         </div>
+      </div>
+      <p class="capability-label">Paid Social Creative</p>
+    </div>
+
+    <div class="capability-tile">
+      <div class="capability-visual">
+        <div class="media-placeholder">
+          <div class="placeholder-text">Graphic Design</div>
+        </div>
+      </div>
+      <p class="capability-label">Graphic Design</p>
+    </div>
+
+    <div class="capability-tile">
+      <div class="capability-visual">
+        <div class="media-placeholder">
+          <div class="placeholder-text">Brand Films</div>
+        </div>
+      </div>
+      <p class="capability-label">Brand Films</p>
+    </div>
+
+    <div class="capability-tile">
+      <div class="capability-visual">
+        <div class="media-placeholder">
+          <div class="placeholder-text">Motion Design</div>
+        </div>
+      </div>
+      <p class="capability-label">Motion Design</p>
+    </div>
+
+    <div class="capability-tile">
+      <div class="capability-visual">
+        <div class="media-placeholder">
+          <div class="placeholder-text">Creative<br>Direction</div>
+        </div>
+      </div>
+      <p class="capability-label">Creative Direction</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 05: LARGE STATEMENT + THREE METRICS
+     ==================================================================== -->
+
+<section class="approach-statement">
+  <div class="statement-label">THE APPROACH</div>
+  <h2 class="statement-heading">From an idea<br>to something worth watching.</h2>
+
+  <div class="approach-grid">
+    <div class="approach-item">
+      <div class="approach-number">01</div>
+      <h3 class="approach-title">Concept first</h3>
+      <p class="approach-text">Audience, objective and story before tools.</p>
+    </div>
+
+    <div class="approach-item">
+      <div class="approach-number">02</div>
+      <h3 class="approach-title">Built with intention</h3>
+      <p class="approach-text">Consistency, direction, pacing and detail.</p>
+    </div>
+
+    <div class="approach-item">
+      <div class="approach-number">03</div>
+      <h3 class="approach-title">Finished properly</h3>
+      <p class="approach-text">Editing, sound, motion and final delivery.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 06: PROCESS INTRODUCTION
+     ==================================================================== -->
+
+<section class="process-intro">
+  <h2 class="process-heading">This is how<br>the work comes together.</h2>
+  <p class="process-description">Creative strategy, AI production and post-production working as one process rather than separate steps.</p>
+  <a href="#" class="process-cta">See the process ↓</a>
+</section>
+
+<!-- ====================================================================
+     SECTION 07: PROCESS - THINK
+     ==================================================================== -->
+
+<section class="process-stage process-think">
+  <div class="stage-content">
+    <div class="stage-label">THINK</div>
+    <h3 class="stage-heading">Concept and<br>creative strategy.</h3>
+    <p class="stage-description">Understanding the audience, product, objective and visual direction before creating a single frame.</p>
+  </div>
+
+  <div class="stage-visuals">
+    <div class="stage-visual-main">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/think-01.jpg</div>
+      </div>
+    </div>
+    <div class="stage-visual-secondary">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/think-02.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 08: PROCESS - BUILD
+     ==================================================================== -->
+
+<section class="process-stage process-build">
+  <div class="stage-visuals">
+    <div class="stage-visual-main">
+      <video autoplay muted loop playsinline>
+        <source src="/media/process/build-01.mp4" type="video/mp4">
+      </video>
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/build-01.mp4</div>
+      </div>
+    </div>
+    <div class="stage-visual-secondary">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/build-02.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-content">
+    <div class="stage-label">BUILD</div>
+    <h3 class="stage-heading">AI production,<br>built frame by frame.</h3>
+    <p class="stage-description">Creating characters, products, environments and cinematic sequences through controlled AI workflows.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 09: PROCESS - SHAPE
+     ==================================================================== -->
+
+<section class="process-stage process-shape">
+  <div class="stage-content">
+    <div class="stage-label">SHAPE</div>
+    <h3 class="stage-heading">Editing brings<br>everything together.</h3>
+    <p class="stage-description">Pacing, compositing, typography, sound and motion turn generated shots into a finished story.</p>
+  </div>
+
+  <div class="stage-visuals">
+    <div class="stage-visual-main">
+      <video autoplay muted loop playsinline>
+        <source src="/media/process/edit-01.mp4" type="video/mp4">
+      </video>
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/edit-01.mp4</div>
+      </div>
+    </div>
+    <div class="stage-visual-secondary">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/edit-02.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 10: PROCESS - DELIVER
+     ==================================================================== -->
+
+<section class="process-stage process-deliver">
+  <div class="stage-visuals">
+    <div class="stage-visual-main">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/deliver-01.jpg</div>
+      </div>
+    </div>
+    <div class="stage-visual-secondary">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/process/deliver-02.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stage-content">
+    <div class="stage-label">DELIVER</div>
+    <h3 class="stage-heading">Ready for<br>the real world.</h3>
+    <p class="stage-description">Final creative prepared across campaign formats, platforms, cutdowns and variations.</p>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 11: DENSE TOOLS / CREATIVE FIELD
+     ==================================================================== -->
+
+<section class="tools-field">
+  <h2 class="tools-heading">One workflow.<br>A lot happening behind it.</h2>
+
+  <div class="tools-grid">
+    <div class="tool-label">MIDJOURNEY</div>
+    <div class="tool-label">KLING</div>
+    <div class="tool-label">VEO</div>
+    <div class="tool-label">RUNWAY</div>
+    <div class="tool-label">AFTER EFFECTS</div>
+    <div class="tool-label">PREMIERE PRO</div>
+    <div class="tool-label">PHOTOSHOP</div>
+    <div class="tool-label">ILLUSTRATOR</div>
+    <div class="tool-label">ELEVENLABS</div>
+    <div class="tool-label">HEYGEN</div>
+    <div class="tool-label">CAPCUT</div>
+    <div class="tool-label">CANVA</div>
+    <div class="tool-label">AI FILMMAKING</div>
+    <div class="tool-label">STORYBOARDING</div>
+    <div class="tool-label">CREATIVE STRATEGY</div>
+    <div class="tool-label">PROMPT DESIGN</div>
+    <div class="tool-label">COMPOSITING</div>
+    <div class="tool-label">MOTION DESIGN</div>
+    <div class="tool-label">VIDEO EDITING</div>
+    <div class="tool-label">SOUND DESIGN</div>
+    <div class="tool-label">VISUAL DEVELOPMENT</div>
+    <div class="tool-label">PRODUCT VISUALS</div>
+    <div class="tool-label">CHARACTER CONSISTENCY</div>
+    <div class="tool-label">AI UGC</div>
+    <div class="tool-label">BRAND FILMS</div>
+    <div class="tool-label">PAID SOCIAL</div>
+    <div class="tool-label">HEALTHCARE CONTENT</div>
+    <div class="tool-label">BEAUTY CONTENT</div>
+    <div class="tool-label">CINEMATIC STORYTELLING</div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 12: SELECTED WORK VISUAL SYSTEM
+     ==================================================================== -->
+
+<section class="selected-work" id="work">
+  <div class="work-intro">
+    <div class="work-label">SELECTED WORK</div>
+    <h2 class="work-heading">A collection of<br>work in one place.</h2>
+    <p class="work-description">Selected films, campaigns, product visuals and short-form creative across healthcare, beauty and branded storytelling.</p>
+    <a href="#" class="work-cta">View all work ↗</a>
+  </div>
+
+  <div class="work-gallery">
+    <div class="work-item work-item-1">
+      <video autoplay muted loop playsinline>
+        <source src="/public/media/projects/beauty.mp4" type="video/mp4">
+      </video>
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/beauty.mp4</div>
       </div>
     </div>
 
-    <!-- Project 03 -->
-    <div class="project-block project-03">
-      <div class="project-label">03 / PRODUCT</div>
-      <div class="project-layout">
-        <div class="project-media full-width">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/product-stories.mp4</div>
-          </div>
-        </div>
-        <div class="project-info">
-          <h3 class="project-title">Product Stories</h3>
-          <p class="project-services">AI Product Film · Motion · Campaign Creative</p>
-        </div>
+    <div class="work-item work-item-2">
+      <video autoplay muted loop playsinline>
+        <source src="/public/media/projects/ovena.mp4" type="video/mp4">
+      </video>
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/ovena.mp4</div>
       </div>
     </div>
 
-    <!-- Project 04 -->
-    <div class="project-block project-04">
-      <div class="project-label">04 / STORYTELLING</div>
-      <div class="project-layout">
-        <div class="project-media cinematic">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/storytelling-short.mp4</div>
-          </div>
-        </div>
-        <div class="project-info">
-          <h3 class="project-title">AI Storytelling Short</h3>
-          <p class="project-services">Concept · AI Film · Editing</p>
-        </div>
+    <div class="work-item work-item-3">
+      <video autoplay muted loop playsinline>
+        <source src="/public/media/projects/storytelling.mp4" type="video/mp4">
+      </video>
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/storytelling.mp4</div>
       </div>
     </div>
 
-    <!-- Project 05 -->
-    <div class="project-block project-05">
-      <div class="project-label">05 / HEALTH TECH</div>
-      <div class="project-layout">
-        <div class="project-media asymmetric">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/health-tech.mp4</div>
-          </div>
-        </div>
-        <div class="project-info">
-          <h3 class="project-title">Speculative Health-Tech Brand Film</h3>
-          <p class="project-services">Creative Direction · AI Production · VSL</p>
-        </div>
+    <div class="work-item work-item-4">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/product.jpg</div>
       </div>
     </div>
 
-    <!-- Project 06 -->
-    <div class="project-block project-06">
-      <div class="project-label">06 / SOCIAL / UGC</div>
-      <div class="project-layout triptych">
-        <div class="project-media vertical">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/ugc-01.mp4</div>
-          </div>
-        </div>
-        <div class="project-media vertical">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/ugc-02.mp4</div>
-          </div>
-        </div>
-        <div class="project-media vertical">
-          <div class="media-placeholder">
-            <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/ugc-03.mp4</div>
-          </div>
-        </div>
-        <div class="project-info full-width">
-          <h3 class="project-title">Social-First AI Creative</h3>
-          <p class="project-services">AI UGC · Paid Social · Short Form</p>
-        </div>
+    <div class="work-item work-item-5">
+      <video autoplay muted loop playsinline>
+        <source src="/public/media/projects/healthtech.mp4" type="video/mp4">
+      </video>
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/healthtech.mp4</div>
       </div>
     </div>
-  </section>
 
-  <!-- CTA Intermission -->
-  <section class="cta-dark">
-    <div class="cta-content">
-      <div class="section-label light">HAVE AN IDEA?</div>
-      <h2 class="section-heading light">
-        <span>Let's see what</span>
-        <span>it could become.</span>
-      </h2>
-      <p class="section-description light">A product, a story, a campaign — or just the beginning of an idea.</p>
-      <a href="#contact" class="cta-link">Start a project ↗</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="about" id="about">
-    <div class="section-label">ABOUT</div>
-    <h2 class="section-heading">
-      <span>Creative thinking</span>
-      <span>behind the work.</span>
-    </h2>
-
-    <div class="about-layout">
-      <div class="about-media">
-        <div class="media-placeholder portrait-large">
-          <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/shay-portrait.jpg</div>
-        </div>
-      </div>
-      <div class="about-content">
-        <h3 class="about-name">SHAY KAY</h3>
-        <p class="about-role">Creative Director & AI Visual Creator</p>
-        <p class="about-bio">I combine creative thinking, technology and visual storytelling to create work that feels intentional rather than generated. My process moves between concept development, AI production, filmmaking, editing and design depending on what the idea actually needs.</p>
-
-        <div class="about-details">
-          <div class="detail-item">
-            <p class="detail-label">LOCATION</p>
-            <p class="detail-value">Brisbane, Australia</p>
-          </div>
-          <div class="detail-item">
-            <p class="detail-label">AVAILABILITY</p>
-            <p class="detail-value">Available Worldwide</p>
-          </div>
-          <div class="detail-item">
-            <p class="detail-label">EXPERTISE</p>
-            <p class="detail-value">AI × FILM × DESIGN</p>
-          </div>
-        </div>
+    <div class="work-item work-item-6">
+      <video autoplay muted loop playsinline>
+        <source src="/public/media/projects/ugc.mp4" type="video/mp4">
+      </video>
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/projects/ugc.mp4</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <div class="section-label">CLIENT STORIES</div>
-    <h2 class="section-heading">
-      <span>What it's like</span>
-      <span>to work together.</span>
-    </h2>
+<!-- ====================================================================
+     SECTION 13: PROJECT FEATURE LABELS
+     ==================================================================== -->
 
-    <div class="testimonials-container">
-      <div class="testimonial-block">
-        <div class="testimonial-quote">
-          <p>"Shay's ability to translate complex product stories into compelling visual narratives is exceptional. The work feels intentional, not generated."</p>
-        </div>
-        <div class="testimonial-meta">
-          <p class="testimonial-client">Sarah Chen</p>
-          <p class="testimonial-company">Ovena Health</p>
-          <p class="testimonial-project">Product Storytelling</p>
-        </div>
-      </div>
+<section class="work-features">
+  <div class="feature-item">
+    <h4 class="feature-title">Concept-led creative</h4>
+    <p class="feature-text">Strategy before execution</p>
+  </div>
 
-      <div class="testimonial-block">
-        <div class="testimonial-quote">
-          <p>"Working with Shay on our brand campaign was a game-changer. The creative strategy combined with AI production delivered results we didn't expect."</p>
-        </div>
-        <div class="testimonial-meta">
-          <p class="testimonial-client">Marcus Thompson</p>
-          <p class="testimonial-company">Luxury Beauty Co.</p>
-          <p class="testimonial-project">Campaign Creative</p>
-        </div>
-      </div>
+  <div class="feature-item">
+    <h4 class="feature-title">Cinematic AI production</h4>
+    <p class="feature-text">Quality at scale</p>
+  </div>
 
-      <div class="testimonial-block">
-        <div class="testimonial-quote">
-          <p>"The attention to detail in every frame shows genuine creative thinking. Not just pushing buttons, but creating work with real intention."</p>
-        </div>
-        <div class="testimonial-meta">
-          <p class="testimonial-client">Elena Rodriguez</p>
-          <p class="testimonial-company">Tech Innovation Labs</p>
-          <p class="testimonial-project">Brand Film</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <div class="feature-item">
+    <h4 class="feature-title">Storytelling across formats</h4>
+    <p class="feature-text">Social to cinema</p>
+  </div>
 
-  <!-- Final CTA -->
-  <section class="final-cta" id="contact">
-    <div class="final-cta-content">
-      <h2 class="final-heading">
-        <span>Have something</span>
-        <span>worth making?</span>
-      </h2>
-      <a href="mailto:hello@example.com" class="final-link">Let's work together ↗</a>
-    </div>
-  </section>
+  <div class="feature-item">
+    <h4 class="feature-title">Campaign-ready delivery</h4>
+    <p class="feature-text">Ready to perform</p>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-top">
-        <h3 class="footer-logo">SHAY KAY™</h3>
-        <div class="footer-links">
-          <a href="#work">WORK</a>
-          <a href="#about">ABOUT</a>
-          <a href="#contact">CONTACT</a>
-          <a href="#" target="_blank">INSTAGRAM</a>
-          <a href="#" target="_blank">LINKEDIN</a>
-          <a href="#" target="_blank">UPWORK</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p class="footer-location">Brisbane, Australia</p>
-        <p class="footer-copyright">© 2026 Shay Kay</p>
+<!-- ====================================================================
+     SECTION 14: START HERE CTA
+     ==================================================================== -->
+
+<section class="start-cta">
+  <div class="start-label">START HERE</div>
+  <h2 class="start-heading">Have an idea?<br>Let's see what it could become.</h2>
+  <p class="start-description">A product, a story, a campaign — or even just the beginning of an idea.</p>
+  <div class="start-buttons">
+    <a href="#" class="start-primary">Start a project ↗</a>
+    <a href="#work" class="start-secondary">Or view selected work</a>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 15: ABOUT / CREATOR VISUAL GALLERY
+     ==================================================================== -->
+
+<section class="about-section" id="about">
+  <div class="about-headline">
+    <h2>The person behind<br>the work.</h2>
+    <p>Creative thinking, visual storytelling and technology brought together in one production process.</p>
+    <a href="#" class="about-cta">About Shay ↗</a>
+  </div>
+
+  <div class="about-gallery">
+    <div class="about-item about-main">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/about/shay-main.jpg</div>
       </div>
     </div>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.js"></script>
-  <script src="script.js"></script>
+    <div class="about-item about-secondary">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/about/shay-01.jpg</div>
+      </div>
+    </div>
+
+    <div class="about-item about-secondary">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/about/workspace.jpg</div>
+      </div>
+    </div>
+
+    <div class="about-item about-secondary">
+      <div class="media-placeholder">
+        <div class="placeholder-text">MEDIA PLACEHOLDER<br>/media/about/process-detail.jpg</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 16: CREDIBILITY STRIP
+     ==================================================================== -->
+
+<section class="credibility-strip">
+  <div class="credibility-item">OVENA HEALTH</div>
+  <div class="credibility-item">Healthcare</div>
+  <div class="credibility-item">Beauty</div>
+  <div class="credibility-item">DTC</div>
+  <div class="credibility-item">Product</div>
+  <div class="credibility-item">AI Film</div>
+  <div class="credibility-item">Social</div>
+</section>
+
+<!-- ====================================================================
+     SECTION 17: TESTIMONIALS / CLIENT STORIES
+     ==================================================================== -->
+
+<section class="testimonials">
+  <div class="testimonials-header">
+    <h2>What working<br>together looks like.</h2>
+    <p>A few words from clients I've worked with across healthcare, product and creative content.</p>
+  </div>
+
+  <div class="testimonials-carousel">
+    <div class="testimonial-item">
+      <div class="testimonial-quote">
+        <p>"Shay's ability to translate complex product stories into compelling visual narratives is exceptional. The work feels intentional, not generated."</p>
+      </div>
+      <div class="testimonial-meta">
+        <p class="testimonial-name">Sarah Chen</p>
+        <p class="testimonial-company">Ovena Health</p>
+        <p class="testimonial-project">Product Storytelling</p>
+      </div>
+    </div>
+
+    <div class="testimonial-item">
+      <div class="testimonial-quote">
+        <p>"Working with Shay on our brand campaign was a game-changer. The creative strategy combined with AI production delivered results we didn't expect."</p>
+      </div>
+      <div class="testimonial-meta">
+        <p class="testimonial-name">Marcus Thompson</p>
+        <p class="testimonial-company">Luxury Beauty Co.</p>
+        <p class="testimonial-project">Campaign Creative</p>
+      </div>
+    </div>
+
+    <div class="testimonial-item">
+      <div class="testimonial-quote">
+        <p>"The attention to detail in every frame shows genuine creative thinking. Not just pushing buttons, but creating work with real intention."</p>
+      </div>
+      <div class="testimonial-meta">
+        <p class="testimonial-name">Elena Rodriguez</p>
+        <p class="testimonial-company">Tech Innovation Labs</p>
+        <p class="testimonial-project">Brand Film</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 18: LARGE TRUST STATEMENT
+     ==================================================================== -->
+
+<section class="trust-statement">
+  <h2>Creative built for<br>brands that care about the details.</h2>
+</section>
+
+<!-- ====================================================================
+     SECTION 19: FINAL CREATIVE SERVICE SHOWCASE
+     ==================================================================== -->
+
+<section class="final-showcase" id="contact">
+  <div class="showcase-content">
+    <h2 class="showcase-heading">From first idea<br>to final frame.</h2>
+    <p class="showcase-description">Creative direction, AI production, editing and design brought together in one workflow.</p>
+    <a href="mailto:hello@shaykay.com" class="showcase-cta">Let's work together ↗</a>
+  </div>
+
+  <div class="showcase-media">
+    <video autoplay muted loop playsinline>
+      <source src="/public/media/final-showcase.mp4" type="video/mp4">
+    </video>
+    <div class="media-placeholder">
+      <div class="placeholder-text">MEDIA PLACEHOLDER<br>/public/media/final-showcase.mp4</div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================
+     SECTION 20: FINAL STATEMENT
+     ==================================================================== -->
+
+<section class="final-statement">
+  <h2>Creative production<br>for what's next.</h2>
+  <a href="#contact" class="final-cta">Start a project ↗</a>
+</section>
+
+<!-- ====================================================================
+     SECTION 21: FOOTER
+     ==================================================================== -->
+
+<footer class="footer">
+  <div class="footer-top">
+    <h3 class="footer-logo">SHAY KAY™</h3>
+  </div>
+
+  <div class="footer-columns">
+    <div class="footer-column">
+      <h4 class="footer-column-title">WORK</h4>
+      <ul class="footer-links">
+        <li><a href="#">AI FILMS</a></li>
+        <li><a href="#">BEAUTY</a></li>
+        <li><a href="#">HEALTHCARE</a></li>
+        <li><a href="#">PRODUCT</a></li>
+        <li><a href="#">UGC</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4 class="footer-column-title">ABOUT</h4>
+      <ul class="footer-links">
+        <li><a href="#">ABOUT SHAY</a></li>
+        <li><a href="#">PROCESS</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h4 class="footer-column-title">CONNECT</h4>
+      <ul class="footer-links">
+        <li><a href="#">INSTAGRAM</a></li>
+        <li><a href="#">LINKEDIN</a></li>
+        <li><a href="#">UPWORK</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-location">Brisbane, Australia</p>
+    <p class="footer-email"><a href="mailto:hello@shaykay.com">hello@shaykay.com</a></p>
+    <p class="footer-copyright">© 2026 Shay Kay</p>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1/bundled/lenis.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

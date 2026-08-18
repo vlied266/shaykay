@@ -1,6 +1,7 @@
 // ============================================
 // LENIS SMOOTH SCROLL
 // ============================================
+
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -23,11 +24,13 @@ requestAnimationFrame(raf);
 // ============================================
 // GSAP SETUP
 // ============================================
+
 gsap.registerPlugin(ScrollTrigger);
 
 // ============================================
 // NAVBAR SCROLL EFFECT
 // ============================================
+
 const navbar = document.querySelector(".navbar");
 
 ScrollTrigger.create({
@@ -42,19 +45,37 @@ ScrollTrigger.create({
 });
 
 // ============================================
-// HERO MEDIA PARALLAX
+// HERO SECTION ANIMATIONS
 // ============================================
+
+const heroContent = document.querySelector(".hero-content");
 const heroMedia = document.querySelector(".hero-media");
+
+if (heroContent) {
+  gsap.from(heroContent, {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+  });
+}
+
 if (heroMedia) {
+  gsap.from(heroMedia, {
+    opacity: 0,
+    y: 60,
+    scale: 1.05,
+    duration: 1.2,
+    delay: 0.3,
+  });
+
   gsap.to(heroMedia, {
     scrollTrigger: {
       trigger: ".hero",
       start: "top center",
       end: "bottom center",
       scrub: 1,
-      markers: false,
     },
-    y: 100,
+    scale: 0.98,
     ease: "none",
   });
 }
@@ -62,276 +83,161 @@ if (heroMedia) {
 // ============================================
 // SECTION REVEAL ANIMATIONS
 // ============================================
-const revealElements = document.querySelectorAll(
-  ".section-heading, .section-description, .approach-column, .project-block"
+
+const sections = document.querySelectorAll(
+  ".featured-project, .capabilities-intro, .approach-statement, .process-intro, .process-stage, .tools-field, .selected-work, .work-features, .start-cta, .about-section, .credibility-strip, .testimonials, .trust-statement, .final-showcase, .final-statement"
 );
 
-revealElements.forEach((element) => {
-  gsap.from(element, {
+sections.forEach((section) => {
+  gsap.from(section, {
     opacity: 0,
-    y: 40,
-    duration: 0.8,
+    y: 60,
+    duration: 1,
     scrollTrigger: {
-      trigger: element,
-      start: "top 85%",
-      end: "top 50%",
+      trigger: section,
+      start: "top 80%",
+      end: "top 40%",
       scrub: false,
-      markers: false,
     },
   });
 });
 
 // ============================================
-// PROCESS STAGES STAGGER
+// MEDIA ANIMATIONS
 // ============================================
-const processStages = document.querySelectorAll(".process-stage");
 
-processStages.forEach((stage, index) => {
-  gsap.from(stage, {
+const mediaElements = document.querySelectorAll(
+  ".featured-visual, .stage-visual-main, .stage-visual-secondary, .showcase-media, .work-item, .about-item, .capability-visual"
+);
+
+mediaElements.forEach((media) => {
+  gsap.from(media, {
     opacity: 0,
-    y: 60,
-    duration: 0.9,
+    scale: 1.05,
+    duration: 1,
     scrollTrigger: {
-      trigger: stage,
-      start: "top 80%",
-      end: "top 40%",
+      trigger: media,
+      start: "top 75%",
+      end: "top 35%",
       scrub: false,
-      markers: false,
     },
   });
+});
 
-  const media = stage.querySelector(".process-media");
-  if (media) {
-    gsap.from(media, {
-      scale: 1.05,
+// ============================================
+// STAGGERED TEXT ANIMATIONS
+// ============================================
+
+const headings = document.querySelectorAll(
+  ".hero-heading, .featured-heading, .intro-heading, .statement-heading, .process-heading, .tools-heading, .work-heading, .start-heading, .showcase-heading, .final-statement h2"
+);
+
+headings.forEach((heading) => {
+  const lines = heading.innerText.split("\n");
+  if (lines.length > 1) {
+    heading.innerHTML = lines
+      .map((line) => `<span style="display: block; overflow: hidden;"><span style="display: block;">${line}</span></span>`)
+      .join("");
+
+    const spans = heading.querySelectorAll("span span");
+    gsap.from(spans, {
+      y: "100%",
       opacity: 0,
-      duration: 1,
+      duration: 0.8,
+      stagger: 0.15,
       scrollTrigger: {
-        trigger: stage,
-        start: "top 75%",
-        end: "top 35%",
-        scrub: false,
-        markers: false,
+        trigger: heading,
+        start: "top 80%",
       },
     });
   }
 });
 
 // ============================================
-// TOOLKIT MARQUEE ANIMATION
+// WORK GALLERY STAGGER
 // ============================================
-const toolkitTracks = document.querySelectorAll(".toolkit-track");
 
-toolkitTracks.forEach((track, index) => {
-  const direction = index % 2 === 0 ? -1 : 1;
-  const speed = 100 + index * 20;
+const workItems = document.querySelectorAll(".work-item");
 
-  // Clone items for infinite scroll
-  const items = track.querySelectorAll("span");
-  items.forEach((item) => {
-    const clone = item.cloneNode(true);
-    track.appendChild(clone);
-  });
-
-  gsap.to(track, {
-    x: direction * speed + "%",
-    duration: 40 + index * 10,
-    ease: "none",
-    repeat: -1,
-    scrollTrigger: {
-      trigger: ".toolkit",
-      start: "top center",
-      end: "bottom center",
-      scrub: 1,
-      markers: false,
-    },
-  });
-});
-
-// ============================================
-// PROJECT HOVER EFFECTS (DESKTOP ONLY)
-// ============================================
-if (window.innerWidth > 768) {
-  const projectBlocks = document.querySelectorAll(".project-block");
-
-  projectBlocks.forEach((project) => {
-    const media = project.querySelector(".project-media, .media-placeholder");
-    const title = project.querySelector(".project-title");
-
-    if (media) {
-      project.addEventListener("mouseenter", () => {
-        gsap.to(media, {
-          scale: 1.015,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-
-        const video = media.querySelector("video");
-        if (video) {
-          video.play();
-        }
-      });
-
-      project.addEventListener("mouseleave", () => {
-        gsap.to(media, {
-          scale: 1,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-      });
-    }
-  });
-}
-
-// ============================================
-// CAPABILITIES SCROLL SNAP
-// ============================================
-const capabilitiesTrack = document.querySelector(".capabilities-track");
-if (capabilitiesTrack) {
-  // Smooth scroll initialization handled by Lenis
-  let isScrolling = false;
-
-  capabilitiesTrack.addEventListener("wheel", (e) => {
-    if (!isScrolling) {
-      isScrolling = true;
-      setTimeout(() => {
-        isScrolling = false;
-      }, 1000);
-    }
-  });
-}
-
-// ============================================
-// FEATURED MEDIA SCALE
-// ============================================
-const featuredMedia = document.querySelector(".featured-media");
-if (featuredMedia) {
-  gsap.from(featuredMedia, {
-    scale: 1.08,
-    opacity: 0,
-    duration: 1.2,
-    scrollTrigger: {
-      trigger: ".featured-work",
-      start: "top 60%",
-      end: "top 20%",
-      scrub: 1,
-      markers: false,
-    },
-  });
-}
-
-// ============================================
-// APPROACH COLUMNS STAGGER
-// ============================================
-const approachColumns = document.querySelectorAll(".approach-column");
-approachColumns.forEach((column, index) => {
-  gsap.from(column, {
-    opacity: 0,
-    y: 40,
-    duration: 0.8,
-    delay: index * 0.15,
-    scrollTrigger: {
-      trigger: ".approach",
-      start: "top 70%",
-      end: "top 30%",
-      scrub: false,
-      markers: false,
-    },
-  });
-});
-
-// ============================================
-// TESTIMONIAL CARDS ANIMATION
-// ============================================
-const testimonialBlocks = document.querySelectorAll(".testimonial-block");
-testimonialBlocks.forEach((block, index) => {
-  gsap.from(block, {
+workItems.forEach((item, index) => {
+  gsap.from(item, {
     opacity: 0,
     y: 40,
     duration: 0.8,
     delay: index * 0.1,
     scrollTrigger: {
-      trigger: ".testimonials",
+      trigger: ".work-gallery",
       start: "top 70%",
-      end: "top 30%",
-      scrub: false,
-      markers: false,
     },
   });
 });
 
 // ============================================
-// ABOUT SECTION ANIMATION
+// APPROACH ITEMS STAGGER
 // ============================================
-const aboutMedia = document.querySelector(".about-media");
-const aboutContent = document.querySelector(".about-content");
 
-if (aboutMedia) {
-  gsap.from(aboutMedia, {
-    opacity: 0,
-    x: -60,
-    duration: 1,
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top 70%",
-      end: "top 30%",
-      scrub: false,
-      markers: false,
-    },
-  });
-}
+const approachItems = document.querySelectorAll(".approach-item");
 
-if (aboutContent) {
-  gsap.from(aboutContent, {
-    opacity: 0,
-    x: 60,
-    duration: 1,
-    scrollTrigger: {
-      trigger: ".about",
-      start: "top 70%",
-      end: "top 30%",
-      scrub: false,
-      markers: false,
-    },
-  });
-}
-
-// ============================================
-// CTA SECTION ANIMATION
-// ============================================
-const ctaDark = document.querySelector(".cta-dark");
-if (ctaDark) {
-  gsap.from(ctaDark.querySelector(".section-label"), {
-    opacity: 0,
-    y: 20,
-    duration: 0.8,
-    scrollTrigger: {
-      trigger: ".cta-dark",
-      start: "top 80%",
-      end: "top 40%",
-      scrub: false,
-      markers: false,
-    },
-  });
-
-  gsap.from(ctaDark.querySelector(".section-heading"), {
+approachItems.forEach((item, index) => {
+  gsap.from(item, {
     opacity: 0,
     y: 40,
     duration: 0.8,
-    delay: 0.1,
+    delay: index * 0.15,
     scrollTrigger: {
-      trigger: ".cta-dark",
-      start: "top 80%",
-      end: "top 40%",
-      scrub: false,
-      markers: false,
+      trigger: ".approach-grid",
+      start: "top 75%",
     },
+  });
+});
+
+// ============================================
+// TESTIMONIAL STAGGER
+// ============================================
+
+const testimonialItems = document.querySelectorAll(".testimonial-item");
+
+testimonialItems.forEach((item, index) => {
+  gsap.from(item, {
+    opacity: 0,
+    y: 40,
+    duration: 0.8,
+    delay: index * 0.1,
+    scrollTrigger: {
+      trigger: ".testimonials-carousel",
+      start: "top 70%",
+    },
+  });
+});
+
+// ============================================
+// TOOLS GRID ANIMATION
+// ============================================
+
+const toolsGrid = document.querySelector(".tools-grid");
+if (toolsGrid) {
+  const toolLabels = toolsGrid.querySelectorAll(".tool-label");
+
+  toolLabels.forEach((label, index) => {
+    gsap.to(label, {
+      opacity: 0.3 + Math.random() * 0.7,
+      duration: 2 + Math.random() * 2,
+      delay: index * 0.05,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut",
+      scrollTrigger: {
+        trigger: ".tools-field",
+        start: "top center",
+      },
+    });
   });
 }
 
 // ============================================
-// SMOOTH SCROLL TO ANCHOR LINKS
+// SMOOTH SCROLL TO ANCHORS
 // ============================================
+
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     const href = this.getAttribute("href");
@@ -339,7 +245,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
       e.preventDefault();
       const target = document.querySelector(href);
       lenis.scrollTo(target, {
-        offset: -100,
+        offset: -70,
         duration: 1.5,
       });
     }
@@ -347,152 +253,79 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 });
 
 // ============================================
-// HEADER LINK ACTIVE STATE
+// VIDEO PLAYBACK
 // ============================================
-const sections = document.querySelectorAll("section[id]");
-const navLinks = document.querySelectorAll(".nav-link");
 
-function updateActiveLink() {
-  let current = "";
+const videos = document.querySelectorAll("video");
 
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop;
-    if (window.scrollY >= sectionTop - 200) {
-      current = section.getAttribute("id");
-    }
-  });
+videos.forEach((video) => {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
 
-  navLinks.forEach((link) => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
+  observer.observe(video);
+});
+
+// ============================================
+// HOVER EFFECTS (DESKTOP)
+// ============================================
+
+if (window.innerWidth > 768) {
+  const interactiveElements = document.querySelectorAll(
+    ".work-item, .featured-visual, .showcase-media"
+  );
+
+  interactiveElements.forEach((element) => {
+    element.addEventListener("mouseenter", () => {
+      gsap.to(element, {
+        scale: 1.015,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    });
+
+    element.addEventListener("mouseleave", () => {
+      gsap.to(element, {
+        scale: 1,
+        duration: 0.4,
+        ease: "power2.out",
+      });
+    });
   });
 }
-
-window.addEventListener("scroll", updateActiveLink);
-
-// ============================================
-// VIDEO AUTOPLAY ON MOBILE
-// ============================================
-function handleVideoAutoplay() {
-  const videos = document.querySelectorAll("video");
-  videos.forEach((video) => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (window.innerWidth < 768) {
-              video.play().catch(() => {});
-            }
-          } else {
-            video.pause();
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(video);
-  });
-}
-
-handleVideoAutoplay();
 
 // ============================================
 // RESIZE HANDLER
 // ============================================
+
 window.addEventListener("resize", () => {
   ScrollTrigger.getAll().forEach((trigger) => trigger.refresh());
 });
 
 // ============================================
-// LOAD COMPLETE
+// INITIALIZATION
 // ============================================
+
 window.addEventListener("load", () => {
   ScrollTrigger.refresh();
   console.log("Portfolio loaded successfully");
 });
 
 // ============================================
-// CUSTOM CURSOR (OPTIONAL - can be enabled)
+// DISABLE SCROLL WHEN NOT NEEDED
 // ============================================
-const createCustomCursor = () => {
-  if (window.innerWidth < 768) return;
 
-  const cursor = document.createElement("div");
-  cursor.className = "custom-cursor";
-  cursor.innerHTML = '<span class="cursor-text">PLAY</span>';
-  document.body.appendChild(cursor);
-
-  let mouseX = 0;
-  let mouseY = 0;
-  let cursorX = 0;
-  let cursorY = 0;
-
-  document.addEventListener("mousemove", (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    gsap.to(cursor, {
-      left: mouseX,
-      top: mouseY,
-      duration: 0.3,
-      ease: "power2.out",
-    });
-  });
-
-  // Show cursor on project hover
-  const projectMedias = document.querySelectorAll(".project-media");
-  projectMedias.forEach((media) => {
-    media.addEventListener("mouseenter", () => {
-      cursor.style.opacity = "1";
-      cursor.style.pointerEvents = "auto";
-    });
-
-    media.addEventListener("mouseleave", () => {
-      cursor.style.opacity = "0";
-      cursor.style.pointerEvents = "none";
-    });
-  });
-};
-
-// Uncomment to enable custom cursor
-// createCustomCursor();
-
-// ============================================
-// KEYBOARD NAVIGATION
-// ============================================
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    console.log("Escape pressed");
+document.addEventListener("touchstart", (e) => {
+  if (e.target.tagName === "A") {
+    e.preventDefault();
   }
 });
-
-// ============================================
-// PERFORMANCE OPTIMIZATION
-// ============================================
-// Throttle scroll events
-let ticking = false;
-function update() {
-  ticking = false;
-}
-
-document.addEventListener("scroll", () => {
-  if (!ticking) {
-    window.requestAnimationFrame(update);
-    ticking = true;
-  }
-});
-
-// Log page performance
-if (window.performance && window.performance.timing) {
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      const perfData = window.performance.timing;
-      const pageLoadTime =
-        perfData.loadEventEnd - perfData.navigationStart;
-      console.log("Page Load Time:", pageLoadTime + "ms");
-    }, 0);
-  });
-}
