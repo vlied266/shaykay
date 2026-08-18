@@ -1,0 +1,27 @@
+{
+  "name": "shay-kay-portfolio",
+  "version": "1.0.0",
+  "description": "Creative Director & AI Visual Creator Portfolio Website",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'This is a static site - no build required'",
+    "preview": "python -m http.server 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "creative",
+    "ai",
+    "film",
+    "design",
+    "visual"
+  ],
+  "author": "Shay Kay",
+  "license": "MIT",
+  "dependencies": {
+    "gsap": "^3.12.2",
+    "lenis": "^1.0.0"
+  },
+  "devDependencies": {}
+}
