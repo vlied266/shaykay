@@ -116,13 +116,14 @@ a {
   right: 0;
   height: 70px;
   z-index: 1000;
-  transition: background-color var(--transition-fast);
+  transition: all var(--transition-fast);
   background: transparent;
+  border-bottom: none;
 }
 
 .navbar.scrolled {
-  background-color: rgba(242, 240, 234, 0.95);
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line-color);
 }
 
@@ -131,28 +132,30 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0 var(--spacing-lg);
+  padding: 0 clamp(32px, 5vw, 48px);
   max-width: 100%;
 }
 
 .navbar-logo {
-  font-size: clamp(0.875rem, 1.5vw, 1rem);
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: clamp(0.85rem, 1.3vw, 0.95rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--text-dark);
 }
 
 .navbar-links {
   display: flex;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
 }
 
 .nav-link {
-  font-size: clamp(0.75rem, 1.2vw, 0.875rem);
+  font-size: clamp(0.75rem, 1.1vw, 0.85rem);
   font-weight: 400;
   letter-spacing: 0.05em;
   position: relative;
   transition: color var(--transition-fast);
+  color: var(--text-dark);
 }
 
 .nav-link::after {
@@ -164,6 +167,10 @@ a {
   height: 1px;
   background-color: var(--text-dark);
   transition: width var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--text-secondary);
 }
 
 .nav-link:hover::after {
